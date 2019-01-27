@@ -28,8 +28,10 @@ npm start
 #### Mechanics
 The game is pretty straightforward. You start at the base of the mysterious island
 and your task is to collect & return all 21 cursed coins back to the chest at the
-very top floating island. To do this, you have take advantage of the magical
+very top floating island. To do this, you have to take advantage of the magical
 bubbles in the island which allow you to *bubble walk* through them to reach higher.
+Take note that you can only carry 7 coins at a time. You have to deposit the coins
+in the chest before you can carry more.
 
 #### Controls
 Standard arrow keys on your keyboard.
