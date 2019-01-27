@@ -70,6 +70,8 @@ export default class MainScene extends Phaser.Scene {
   }
 
   create() {
+    this.cameras.main.setBounds(0, 0, 1536, 900)
+    this.cameras.main.fadeIn(2000, 0, 0, 0)
     const { config } = this.game
     const gameWidth = Number(config.width)
     const viewPortHeight = Number(config.height)

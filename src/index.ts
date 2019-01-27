@@ -1,13 +1,15 @@
 import 'phaser'
 import MainScene from './scenes/MainScene'
 import HomeScene from './scenes/HomeScene';
+import FirstScene from './scenes/FirstScene';
 
 const config: GameConfig = {
-  width: 1536,
-  height: 900,
+  width: window.innerWidth,
+  height: window.innerHeight,
   type: Phaser.AUTO,
   parent: "game",
   scene: [
+    FirstScene,
     MainScene,
     HomeScene
   ],
