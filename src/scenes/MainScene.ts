@@ -29,7 +29,7 @@ export default class MainScene extends Phaser.Scene {
     coinsCarrying: number,
     gameOver: boolean
   }
-  godEye: Phaser.Physics.Arcade.Sprite
+  // godEye: Phaser.Physics.Arcade.Sprite
   bubbles: Phaser.Physics.Arcade.Group
   doubloons: Phaser.Physics.Arcade.Group
   coinCount: Phaser.GameObjects.Text
@@ -333,11 +333,11 @@ export default class MainScene extends Phaser.Scene {
       this.player.setVelocityY(-400)
     }
 
-    if (this.cursors.space.isDown) {
-      this.godEye.y -= 10
-    }
-    if (this.cursors.down.isDown) {
-      this.godEye.y += 10
-    }
+    // if (this.cursors.space.isDown) {
+    //   this.godEye.y -= 10
+    // }
+    // if (this.cursors.down.isDown) {
+    //   this.godEye.y += 10
+    // }
   }
 }
