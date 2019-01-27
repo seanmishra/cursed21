@@ -70,80 +70,91 @@ export default class MainScene extends Phaser.Scene {
   }
 
   create() {
-    this.cameras.main.setBounds(0, 0, 1536, 900)
-    this.cameras.main.fadeIn(2000, 0, 0, 0)
     const { config } = this.game
     const gameWidth = Number(config.width)
     const viewPortHeight = Number(config.height)
-    const gameHeight = 4000
+    const gameHeight = 2960
 
     // World Init
     this.physics.world.setBoundsCollision(true, true, false, false)
     this.cursors = this.input.keyboard.createCursorKeys()
 
     // Background
-    this.gameBg = this.add.image(0, 0, 'gameBg').setOrigin(0)
-    this.gameBg = this.add.image(0, 0, 'islands').setOrigin(0)
+    this.gameBg = this.add.image(0, 0, 'gameBg').setScale(0.75).setOrigin(0)
+    this.gameBg = this.add.image(0, 0, 'islands').setScale(0.75).setOrigin(0)
 
     // Platforms
     this.platforms = this.physics.add.staticGroup()
-    for (let i = 0; i <= gameWidth; i += 128) {
-      this.platforms.create(i, 64, 'block')
-      .setScale(0.5)
+    for (let i = 0; i <= gameWidth; i += 64) {
+      this.platforms.create(i, 32, 'block')
+      .setScale(0.25)
       .refreshBody()
-      this.platforms.create(i, gameHeight - 64, 'block')
-      .setScale(0.5)
+      this.platforms.create(i, gameHeight - 32, 'block')
+      .setScale(0.25)
       .refreshBody()
     }
-    for (let i = 0; i <= gameHeight; i += 128) {
-      this.platforms.create(64, i, 'block')
-      .setScale(0.5)
+    for (let i = 0; i <= gameHeight - 128; i += 64) {
+      this.platforms.create(32, i, 'block')
+      .setScale(0.25)
       .refreshBody()
-      this.platforms.create(gameWidth - 64, i, 'block')
-      .setScale(0.5)
+      this.platforms.create(gameWidth - 32, i, 'block')
+      .setScale(0.25)
       .refreshBody()
     }
 
     // Islands Platforms
-    this.platforms.create(1100, 3255, 'islandBlock').setScale(0.5).refreshBody()
-    this.platforms.create(1220, 3255, 'islandBlock').setScale(0.5).refreshBody()
-    this.platforms.create(450, 3125, 'islandBlock').setScale(0.5).refreshBody()
-    this.platforms.create(550, 3125, 'islandBlock').setScale(0.5).refreshBody()
-    this.platforms.create(1100, 2720, 'islandBlock').setScale(0.5).refreshBody()
-    this.platforms.create(970, 2720, 'islandBlock').setScale(0.5).refreshBody()
-    this.platforms.create(335, 2360, 'islandBlock').setScale(0.5).refreshBody()
-    this.platforms.create(435, 2360, 'islandBlock').setScale(0.5).refreshBody()
-    this.platforms.create(1110, 2110, 'islandBlock').setScale(0.5).refreshBody()
-    this.platforms.create(1180, 2110, 'islandBlock').setScale(0.5).refreshBody()
-    this.platforms.create(455, 1830, 'islandBlock').setScale(0.5).refreshBody()
-    this.platforms.create(570, 1830, 'islandBlock').setScale(0.5).refreshBody()
-    this.platforms.create(1100, 1470, 'islandBlock').setScale(0.5).refreshBody()
-    this.platforms.create(1200, 1470, 'islandBlock').setScale(0.5).refreshBody()
-    this.platforms.create(710, 1210, 'islandBlock').setScale(0.5).refreshBody()
-    this.platforms.create(800, 1210, 'islandBlock').setScale(0.5).refreshBody()
-    this.platforms.create(600, 830, 'islandBlock').setScale(0.5).refreshBody()
-    this.platforms.create(670, 830, 'islandBlock').setScale(0.5).refreshBody()
-    this.platforms.create(1100, 700, 'islandBlock').setScale(0.5).refreshBody()
-    this.platforms.create(1210, 700, 'islandBlock').setScale(0.5).refreshBody()
-    this.platforms.create(710, 450, 'islandBlock').setScale(0.5).refreshBody()
-    this.platforms.create(830, 450, 'islandBlock').setScale(0.5).refreshBody()
+    this.platforms.create(810, 2435, 'islandBlock').setScale(0.25).refreshBody()
+    this.platforms.create(874, 2435, 'islandBlock').setScale(0.25).refreshBody()
+    this.platforms.create(930, 2435, 'islandBlock').setScale(0.25).refreshBody()
+    this.platforms.create(330, 2335, 'islandBlock').setScale(0.25).refreshBody()
+    this.platforms.create(390, 2335, 'islandBlock').setScale(0.25).refreshBody()
+    this.platforms.create(420, 2335, 'islandBlock').setScale(0.25).refreshBody()
+    this.platforms.create(710, 2040, 'islandBlock').setScale(0.25).refreshBody()
+    this.platforms.create(770, 2040, 'islandBlock').setScale(0.25).refreshBody()
+    this.platforms.create(830, 2040, 'islandBlock').setScale(0.25).refreshBody()
+    this.platforms.create(230, 1760, 'islandBlock').setScale(0.25).refreshBody()
+    this.platforms.create(290, 1760, 'islandBlock').setScale(0.25).refreshBody()
+    this.platforms.create(330, 1760, 'islandBlock').setScale(0.25).refreshBody()
+    this.platforms.create(815, 1575, 'islandBlock').setScale(0.25).refreshBody()
+    this.platforms.create(885, 1575, 'islandBlock').setScale(0.25).refreshBody()
+    this.platforms.create(320, 1365, 'islandBlock').setScale(0.25).refreshBody()
+    this.platforms.create(385, 1365, 'islandBlock').setScale(0.25).refreshBody()
+    this.platforms.create(450, 1365, 'islandBlock').setScale(0.25).refreshBody()
+    this.platforms.create(810, 1090, 'islandBlock').setScale(0.25).refreshBody()
+    this.platforms.create(874, 1090, 'islandBlock').setScale(0.25).refreshBody()
+    this.platforms.create(920, 1090, 'islandBlock').setScale(0.25).refreshBody()
+    this.platforms.create(515, 895, 'islandBlock').setScale(0.25).refreshBody()
+    this.platforms.create(575, 895, 'islandBlock').setScale(0.25).refreshBody()
+    this.platforms.create(620, 895, 'islandBlock').setScale(0.25).refreshBody()
+    this.platforms.create(430, 610, 'islandBlock').setScale(0.25).refreshBody()
+    this.platforms.create(490, 610, 'islandBlock').setScale(0.25).refreshBody()
+    this.platforms.create(520, 610, 'islandBlock').setScale(0.25).refreshBody()
+    this.platforms.create(810, 515, 'islandBlock').setScale(0.25).refreshBody()
+    this.platforms.create(870, 515, 'islandBlock').setScale(0.25).refreshBody()
+    this.platforms.create(925, 515, 'islandBlock').setScale(0.25).refreshBody()
+    this.platforms.create(525, 325, 'islandBlock').setScale(0.25).refreshBody()
+    this.platforms.create(585, 325, 'islandBlock').setScale(0.25).refreshBody()
+    this.platforms.create(630, 325, 'islandBlock').setScale(0.25).refreshBody()
 
     this.platforms.toggleVisible()
 
     // chest
     // doubloons
-    this.chest = this.physics.add.sprite(790, 375, 'chest').setScale(0.25)
-    this.chestFilled = this.physics.add.sprite(790, 375, 'chestFilled').setScale(0.25)
+    this.chest = this.physics.add.sprite(585, 282, 'chest').setScale(0.2)
+    this.chestFilled = this.physics.add.sprite(585, 282, 'chestFilled').setScale(0.2)
     this.chestFilled.visible = false
     this.doubloons = this.physics.add.group()
-    for (let i = 256; i <= gameWidth - 256; i += 64) {
-      this.doubloons.create(i, 600, 'doubloon').setScale(0.15).setGravity(0, 300)
+    for (let i = 256; i <= gameWidth - 180; i += 64) {
+      this.doubloons.create(i, 400, 'doubloon').setScale(0.1).setGravity(0, 300)
     }
-    for (let i = 1200; i <= gameWidth - 256; i += 64) {
-      this.doubloons.create(i, 1400, 'doubloon').setScale(0.15).setGravity(0, 300)
+    for (let i = 800; i <= 950; i += 64) {
+      this.doubloons.create(i, 1000, 'doubloon').setScale(0.1).setGravity(0, 300)
     }
-    for (let i = 1200; i <= gameWidth - 256; i += 64) {
-      this.doubloons.create(i, 2500, 'doubloon').setScale(0.15).setGravity(0, 300)
+    for (let i = 750; i <= 964; i += 64) {
+      this.doubloons.create(i, 1800, 'doubloon').setScale(0.1).setGravity(0, 300)
+    }
+    for (let i = 300; i <= 400; i += 64) {
+      this.doubloons.create(i, 1500, 'doubloon').setScale(0.1).setGravity(0, 300)
     }
     this.anims.create({
       key: 'spin',
@@ -154,8 +165,8 @@ export default class MainScene extends Phaser.Scene {
     this.doubloons.playAnimation('spin')
 
     // Player
-    this.player = this.physics.add.sprite(gameWidth * 0.5, gameHeight - 200, 'wolfIdleRight')
-      .setScale(0.5)
+    this.player = this.physics.add.sprite(gameWidth * 0.5, gameHeight - 150, 'wolfIdleRight')
+      .setScale(0.4)
       .setGravity(0, 500)
     this.anims.create({
       key: 'idleRight',
@@ -201,6 +212,7 @@ export default class MainScene extends Phaser.Scene {
       let rand = Phaser.Math.Between(1,2)
       setTimeout(() => {
         this.bubbles.create(Phaser.Math.Between(200, gameWidth - 200), gameHeight - 200, 'bubble')
+        .setScale(0.75)
         .setBounce(1)
         .setVelocity(rand === 1 ? bubbleVelocity : -bubbleVelocity, -bubbleVelocity)
       }, i * 1500 + Phaser.Math.Between(0, 9000))
@@ -208,6 +220,7 @@ export default class MainScene extends Phaser.Scene {
     for (let i = 1; i <= 6; i++) {
       setTimeout(() => {
         this.bubbles.create(Phaser.Math.Between(200, gameWidth - 200), 200, 'bubble')
+        .setScale(0.75)
         .setBounce(1)
         .setVelocity(bubbleVelocity, -bubbleVelocity)
       }, i * 1000 + Phaser.Math.Between(0, 9000))
@@ -215,9 +228,9 @@ export default class MainScene extends Phaser.Scene {
 
 
     // Debug
-    this.godEye = this.physics.add.sprite(gameWidth * 0.5, 500, 'bubble')
-    .setScale(0.1)
-    .setGravity(0, 0)
+    // this.godEye = this.physics.add.sprite(300, 1500, 'bubble')
+    // .setScale(0.1)
+    // .setGravity(0, 0)
 
     // Physics / Collision
     this.physics.add.collider(this.player, this.platforms)
@@ -268,22 +281,23 @@ export default class MainScene extends Phaser.Scene {
 
     // Game Text
     this.coinCount = this.add.text(
-      gameWidth - 300, 100,
+      gameWidth - 250, 30,
       `Coins Left: ${this.state.coinsTotal}`,
       {
-        fontSize: '28px', fill: '#ffffff' 
+        fontSize: '24px', fill: '#ffffff' 
       }
     ).setScrollFactor(0)
     this.coinCarryingCount = this.add.text(
-      gameWidth - 300, 150,
+      gameWidth - 250, 75,
       `Carrying: ${this.state.coinsCarrying}/7`,
       {
-        fontSize: '28px', fill: '#ffffff' 
+        fontSize: '24px', fill: '#ffffff' 
       }
     ).setScrollFactor(0)
 
     // Camera
     this.cameras.main.setBounds(0, 0, gameWidth, gameHeight)
+    this.cameras.main.fadeIn(2000, 0, 0, 0)
     // this.cameras.main.startFollow(this.godEye, true, 0.05, 0.05)
     this.cameras.main.startFollow(this.player, true, 0.05, 0.05)
   }
@@ -316,7 +330,7 @@ export default class MainScene extends Phaser.Scene {
     }
 
     if (this.cursors.up.isDown && this.player.body.touching.down && !this.state.gameOver) {
-      this.player.setVelocityY(-500)
+      this.player.setVelocityY(-400)
     }
 
     if (this.cursors.space.isDown) {

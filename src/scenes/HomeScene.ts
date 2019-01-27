@@ -33,16 +33,15 @@ export default class HomeScene extends Phaser.Scene {
   }
 
   create() {
-    this.cameras.main.setBounds(0, 0, 1536, 900)
     this.cameras.main.fadeIn(2000, 0, 0, 0)
     const { config } = this.game
 
     this.physics.world.setBoundsCollision(true, true, true, true)
 
-    this.homeBg = this.add.image(0, -3000, 'homeBg').setOrigin(0)
-    this.house = this.add.image(500, 600, 'house').setScale(0.3)
+    this.homeBg = this.add.image(0, -2200, 'homeBg').setScale(0.75).setOrigin(0)
+    this.house = this.add.image(425, 480, 'house').setScale(0.3)
 
-    this.man = this.physics.add.sprite( 1350, 720, 'wolfIdleLeft').setScale(0.5)
+    this.man = this.physics.add.sprite( 1000, 570, 'wolfIdleLeft').setScale(0.5)
     this.anims.create({
       key: 'transform',
       frames: this.anims.generateFrameNumbers('transform', { start: 0, end: 28 }),
@@ -71,17 +70,17 @@ export default class HomeScene extends Phaser.Scene {
       // @ts-ignore
       this.man.body.setVelocity(0, 0)
       this.man.anims.play('manStanding', true)
-    }, 15000)
+    }, 12000)
     setTimeout(() => {
       // @ts-ignore
       this.man.body.setVelocity(-40, -15)
       this.man.anims.play('manWalking', true)
-    }, 18000)
+    }, 15000)
     setTimeout(() => {
       this.man.destroy()
-    }, 24000)
+    }, 19000)
 
-    this.woman = this.physics.add.sprite( 800, 720, 'womanIdle').setScale(0.5)
+    this.woman = this.physics.add.sprite( 600, 570, 'womanIdle').setScale(0.5)
     this.anims.create({
       key: 'womanWalking',
       frames: this.anims.generateFrameNumbers('womanWalk', { start: 0, end: 14 }),
@@ -92,16 +91,16 @@ export default class HomeScene extends Phaser.Scene {
       // @ts-ignore
       this.woman.body.setVelocity(-35, -15)
       this.woman.anims.play('womanWalking', true)
-    }, 18000)
+    }, 15000)
     setTimeout(() => {
       this.woman.destroy()
-    }, 24000)
+    }, 19000)
 
 
     setTimeout(() => {
 
       this.add.text(
-        600, 300,
+        400, 200,
         'Home is where',
         {
           fontSize: '42px',
@@ -110,7 +109,7 @@ export default class HomeScene extends Phaser.Scene {
       )
 
       this.add.text(
-        600, 400,
+        400, 275,
         'your heart is...',
         {
           fontSize: '42px',
@@ -118,7 +117,7 @@ export default class HomeScene extends Phaser.Scene {
         }
       )
 
-    }, 25000)
+    }, 20000)
 
     
     

@@ -29,16 +29,16 @@ export default class FirstScene extends Phaser.Scene {
 
     this.physics.world.setBoundsCollision(true, true, true, true)
 
-    this.mainBg = this.add.image(0, -3000, 'mainBg').setOrigin(0)
-    this.house = this.add.image(500, 600, 'house').setScale(0.3)
-    this.man = this.physics.add.sprite( 1350, 720, 'wolfIdleLeft').setScale(0.5)
-    this.woman = this.physics.add.sprite( 800, 720, 'womanIdle').setScale(0.5)
+    this.mainBg = this.add.image(0, -2200, 'mainBg').setScale(0.75).setOrigin(0)
+    this.house = this.add.image(425, 480, 'house').setScale(0.3)
+    this.man = this.physics.add.sprite( 1000, 570, 'wolfIdleLeft').setScale(0.5)
+    this.woman = this.physics.add.sprite( 600, 570, 'womanIdle').setScale(0.5)
     this.add.text(
-      600, 300,
+      425, 200,
       'Cursed 21',
       {
-        fontSize: '52px',
-        fill: '#ffffff' 
+        fontSize: '60px',
+        fill: '#ffffff'
       }
     )
 
