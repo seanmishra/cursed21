@@ -4,8 +4,8 @@ import HomeScene from './scenes/HomeScene';
 import FirstScene from './scenes/FirstScene';
 
 const config: GameConfig = {
-  width: window.innerWidth,
-  height: window.innerHeight,
+  width: 1536,
+  height: 900,
   type: Phaser.AUTO,
   parent: "game",
   scene: [
