@@ -59,7 +59,7 @@ all across it the hope that putting them back in the chest would lift the curse.
 
 Designed & Developed by:
 - Sean Mishra ([@cod3rguy](https://github.com/cod3rguy))
-- Sonali Priya ([@priyasonali](https://github.com/sonalipriya))
+- Sonali Priya ([@sonalipriya](https://github.com/sonalipriya))
 
 Assets from:
 - [Game Developer Studio](https://www.gamedeveloperstudio.com)
