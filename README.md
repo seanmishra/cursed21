@@ -16,7 +16,7 @@ This game was made in less than 48 hours at STLGameJam (UMSL, St. Louis) during 
 
 ## How To Play
 
-The game is hosted online at https://cursed21.now.sh/
+The game is hosted online at https://cursed21.vercel.app/
 
 To play locally, you need to have Node.js installed on your system.
 Then, from the project root, execute the following commands:-
