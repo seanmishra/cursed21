@@ -58,7 +58,7 @@ all across it the hope that putting them back in the chest would lift the curse.
 ## Credits
 
 Designed & Developed by:
-- Sean Mishra ([@cod3rguy](https://github.com/cod3rguy))
+- Sean Mishra ([@seanmishra](https://github.com/seanmishra))
 - Sonali Priya ([@sonalipriya](https://github.com/sonalipriya))
 
 Assets from:
