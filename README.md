@@ -52,7 +52,7 @@ threw the coins away and tried to go back home to his beloved. But his beloved
 didn't recognize him in his beast form.
 
 He then decided to return to the mysterious island and collect the coins scattered
-all across it the hope that putting them back in the chest would lift the curse.
+all across it in the hope that putting them back in the chest would lift the curse.
 
 
 ## Credits
